@@ -1,0 +1,36 @@
+server:
+  port: 8085
+spring:
+  devtools:
+    livereload:
+      port: 35739
+  application:
+    name: MedicalManagement
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/doctor?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: 123456
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:/mapper/*.xml
+knife4j:
+  enable: true
+  openapi:
+    title: 接口文档
+    description: " 接口文档"
+    email: xiaoymin@foxmail.com
+    concat: 黄总
+    url: https://docs.xiaominfo.com
+    version: v1.0
+    group:
+      test1:
+        group-name: 测试接口
+        api-rule: package
+        api-rule-resources:
+          - com.example.controller
+
+
